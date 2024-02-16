@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\PublicController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
+// Landing
 Route::post('/send', [PublicController::class, 'sendMail']);
+Route::post('/application-form', [ApplicationController::class, 'store']);
+
+// Admin
+Route::prefix('/admin')->group(function (){
+
+    Route::post('/login', [AuthController::class, 'login']);
+
+    Route::middleware('auth:api')->group(function (){
+        Route::post('/logout', [AuthController::class, 'logout']);
+        Route::post('/registr', [AuthController::class, 'registration']);
+    });
+});
+
+
