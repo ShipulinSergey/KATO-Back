@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 
 /**
  * @OA\Info(
- *     title="My Doc API",
+ *     title="KATA API",
  *     version="1.0"
  * ),
  * @OA\PathItem(
@@ -15,5 +15,4 @@ use App\Http\Controllers\Controller;
  */
 class MainController extends Controller
 {
-    //
 }
