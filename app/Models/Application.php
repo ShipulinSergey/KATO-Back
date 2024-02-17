@@ -28,7 +28,7 @@ class Application extends Model
         'surname' => 'string',
         'lastname' => 'string',
         'position' => 'string',
-        'email' => 'email',
+        'email' => 'string',
         'phone' => 'string',
         'job' => 'string',
         'form' => 'integer',
