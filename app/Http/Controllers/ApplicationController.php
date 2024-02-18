@@ -13,13 +13,10 @@ class ApplicationController extends Controller
     {
         $data = $request->validated();
         $application = Application::create($data);
-
         if (!$application) {
             return response()->json(['success' => false, 'message' => 'Failed to save application']);
         }
-
-        $data['form_litter'] = $application->getFullFormAttribute();
-        Mail::to('jeffrey@example.com')->send(new MailShipped($data));
+        Mail::to('jeffrey@example.com')->send(new MailShipped($application));
         return response()->json(['success' => true, 'message' => 'Form submitted successfully']);
     }
 }

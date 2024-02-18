@@ -4,4 +4,4 @@
 <p>Почта: {{ $data['email'] }}</p>
 <p>Специализация: {{ $data['position'] }}</p>
 <p>Должность: {{ $data['job'] }}</p>
-<p>Форма участия: {{ $data['form_litter'] }}</p>
+<p>Форма участия: {{ $data['full_form'] }}</p>

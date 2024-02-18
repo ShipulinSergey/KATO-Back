@@ -35,7 +35,7 @@ class Application extends Model
                 $form =  "Тезис или Статья";
                 break;
             case '3':
-                $form =  'Участник конференции молодых учёных "Батпеновские чтения';
+                $form =  'Участник конференции молодых учёных "Батпеновские чтения"';
                 break;
             case '4':
                 $form =  'Слушатель';
@@ -46,5 +46,6 @@ class Application extends Model
         return $form;
     }
 
+    protected $appends = ['full_form'];
 
 }
