@@ -6,13 +6,13 @@
     },
     "paths": {
         "/api/": {},
-        "/application-form/": {
-            "put": {
+        "/api/application/": {
+            "post": {
                 "tags": [
                     "Application"
                 ],
                 "summary": "store",
-                "operationId": "d7a231c4ea9bddc3abfc033475f6ea83",
+                "operationId": "1713f0e2e98f98644895410c0eb682d7",
                 "requestBody": {
                     "required": true,
                     "content": {

@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Application extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'name',
@@ -21,20 +22,6 @@ class Application extends Model
         'in_kata',
         'notify',
         'сonsent_status',
-    ];
-
-    protected $casts = [
-        'name' => 'string',
-        'surname' => 'string',
-        'lastname' => 'string',
-        'position' => 'string',
-        'email' => 'string',
-        'phone' => 'string',
-        'job' => 'string',
-        'form' => 'integer',
-        'in_kata' => 'integer',
-        'notify' => 'integer',
-        'сonsent_status' => 'integer',
     ];
 
     public function getFullFormAttribute(): string

@@ -15,10 +15,10 @@ class ApplicationController extends Controller
         $application = Application::create($data);
 
         if (!$application) {
-            return response()->json(['success' => false, 'message' => 'Failed to save data']);
+            return response()->json(['success' => false, 'message' => 'Failed to save application']);
         }
 
-        $data['form_litter'] = $application->getFullFormAttribute($data);
+        $data['form_litter'] = $application->getFullFormAttribute();
         Mail::to('jeffrey@example.com')->send(new MailShipped($data));
         return response()->json(['success' => true, 'message' => 'Form submitted successfully']);
     }

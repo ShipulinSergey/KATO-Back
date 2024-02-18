@@ -17,13 +17,14 @@ return new class extends Migration
             $table->string('surname');
             $table->string('lastname')->nullable();
             $table->string('position');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('phone');
             $table->string('job');
             $table->integer('form');
             $table->boolean('in_kata')->nullable();
             $table->boolean('notify')->nullable();
             $table->boolean('сonsent_status')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Swagger;
 use App\Http\Controllers\Controller;
 
 /**
- * @OA\Put(
- *     path="/application-form/",
+ * @OA\POST(
+ *     path="/api/application/",
  *     summary="store",
  *     tags={"Application"},
  *     @OA\RequestBody(
