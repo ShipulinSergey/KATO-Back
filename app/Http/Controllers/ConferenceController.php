@@ -23,9 +23,6 @@ class ConferenceController extends Controller
     {
             $data = $request->validated();
             $conference = Conference::create($data);
-            if(!$conference){
-                return response()->json(['success' => false, 'message' => 'Failed to create conference'], 500);
-            }
             return response()->json(['success' => true, 'data' => $conference]);
     }
 
@@ -35,9 +32,6 @@ class ConferenceController extends Controller
     public function show(string $id)
     {
         $conference = Conference::with('organization', 'editor')->find($id);
-        if(!$conference){
-            return response()->json(['success' => false, 'message' => 'The conference could not be found'], 404);
-        }
         $conference->makeHidden(['created_at', 'updated_at']);
         return response()->json(['success' => true, 'data' => $conference]);
     }

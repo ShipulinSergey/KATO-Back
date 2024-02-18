@@ -13,9 +13,6 @@ class ApplicationController extends Controller
     {
         $data = $request->validated();
         $application = Application::create($data);
-        if (!$application) {
-            return response()->json(['success' => false, 'message' => 'Failed to save application']);
-        }
         Mail::to(config('mail.from.address'))->send(new MailShipped($application));
         return response()->json(['success' => true, 'message' => 'Form submitted successfully']);
     }
