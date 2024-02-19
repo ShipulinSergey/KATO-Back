@@ -31,9 +31,9 @@ class ApplicationRequest extends FormRequest
             'phone' => 'required|string',
             'job' => 'string',
             'form' => 'nullable',
-            'in_kata' => 'integer|in:0,1',
-            'notify' => 'integer|in:0,1',
-            'сonsent_status' => 'integer|in:0,1',
+            'in_kata' => 'nullable|integer|in:0,1',
+            'notify' => 'nullable|integer|in:0,1',
+            'сonsent_status' => 'nullable|integer|in:0,1',
         ];
     }
     protected function failedValidation($validator)
