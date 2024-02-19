@@ -30,7 +30,7 @@ class ApplicationRequest extends FormRequest
             'email' => 'required|email',
             'phone' => 'required|string',
             'job' => 'string',
-            'form' => 'integer|in:1,2,3,4,5',
+            'form' => 'nullable',
             'in_kata' => 'integer|in:0,1',
             'notify' => 'integer|in:0,1',
             'сonsent_status' => 'integer|in:0,1',
